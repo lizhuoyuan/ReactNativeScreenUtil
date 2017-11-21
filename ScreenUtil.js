@@ -242,7 +242,8 @@ export function ifIphoneX(iphoneXStyle, iosStyle, androidStyle) {
     } else if (Platform.OS === 'ios') {
         return iosStyle
     } else {
-        return androidStyle
+        if (androidStyle) return androidStyle;
+        return iosStyle
     }
 }
 
