@@ -20,6 +20,7 @@ export let pixelRatio = PixelRatio.get();
 //像素密度
 export const DEFAULT_DENSITY = 2;
 //px转换成dp
+//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的750和1334为对应尺寸即可.
 const w2 = 750 / DEFAULT_DENSITY;
 //px转换成dp
 const h2 = 1334 / DEFAULT_DENSITY;
