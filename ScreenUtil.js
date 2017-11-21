@@ -232,14 +232,17 @@ export function isIphoneX() {
 /**
  * 根据是否是iPhoneX返回不同的样式
  * @param iphoneXStyle
- * @param regularStyle
+ * @param iosStyle
+ * @param androidStyle
  * @returns {*}
  */
-export function ifIphoneX(iphoneXStyle, regularStyle) {
+export function ifIphoneX(iphoneXStyle, iosStyle, androidStyle) {
     if (isIphoneX()) {
         return iphoneXStyle;
+    } else if (Platform.OS === 'ios') {
+        return iosStyle
     } else {
-        return regularStyle
+        return androidStyle
     }
 }
 
