@@ -6,6 +6,6 @@ ReactNative屏幕工具适配类
 
 相关链接:
 
-适配iPhoneX的相关方法: http://blog.csdn.net/u011272795/article/details/78592605
+适配iPhoneX的效果及相关方法: http://blog.csdn.net/u011272795/article/details/78592605
 
 屏幕适配工具类使用方法: http://blog.csdn.net/u011272795/article/details/73824558
