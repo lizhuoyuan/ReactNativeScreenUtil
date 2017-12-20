@@ -236,7 +236,7 @@ export function isIphoneX() {
  * @param androidStyle
  * @returns {*}
  */
-export function ifIphoneX(iphoneXStyle, iosStyle, androidStyle) {
+export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
     if (isIphoneX()) {
         return iphoneXStyle;
     } else if (Platform.OS === 'ios') {
