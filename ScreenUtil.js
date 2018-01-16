@@ -11,8 +11,6 @@ import {
     Platform
 } from 'react-native';
 
-import rnConnect from '../../app/config/rnConnect';
-
 export let screenW = Dimensions.get('window').width;
 export let screenH = Dimensions.get('window').height;
 const fontScale = PixelRatio.getFontScale();
@@ -195,27 +193,6 @@ export function getRemainingimeDistance2(distance: Number) {
     return [hours, minutes];//["0", "0", "2", "7", "33", "30"]0年0月2日 7时33分30秒
 }
 
-/***
- * 从原生获取message，
- * 处理逻辑：
- * 如果错误表中存在取原生回传值，
- * 如果不存在取调用时传过来的默认值，
- * 如果没有message没有或者code找不到对应值message就报'未知错误'
- * @param code  错误码 必传
- * @param message 错误信息 必传
- * @param callBack 回调 必传
- */
-// ScreenUtils.showMsg(response.code,response.message,(msg,delay) => {this.refs.toast.show(msg, delay)});
-// 示例：showMsg(response.code,response.message,(msg,delay) => {this.refs.toast.show(msg, delay)});
-export function showMsg(code = '', message = '未知错误', callBack: func) {
-    if (code) {
-        rnConnect.getErrorMsg(String(code), (event) => {
-            const errorMessage = Boolean(event) ? event : String(message);//如果没有就取当前传过来的
-            const defaultDelay = 2000;
-            callBack && callBack(errorMessage, defaultDelay);//在回调中执行showMsg
-        });
-    }
-}
 
 /**
  * 判断是否为iphoneX
