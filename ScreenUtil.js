@@ -290,45 +290,6 @@ export function removeAsyncStorage(key, successCallback, errorCallback) {
     })
 }
 
-export default class ScreenUtil {
-    static screenW = screenW;
-    static screenH = screenH;
-    static pixelRatio = pixelRatio;
-    static DEFAULT_DENSITY = DEFAULT_DENSITY;
-
-    static getMsg(code = '', message = '', callBack: func) {
-        return getMsg(code, message, callBack);
-    }
-
-    static setSpText(size: Number) {
-        return setSpText(size);
-    }
-
-    static scaleSize(size: Number) {
-        return scaleSize(size);
-    }
-
-    static getRemainingimeDistance(distance: Number) {
-        return getRemainingimeDistance(distance);
-    }
-
-    static toDate(timestamp: Number, format1 = 'yyyy-MM-dd hh:mm:ss') {
-        return toDate(timestamp, format1);
-    }
-
-    static toTimestamp(date: String) {
-        return toTimestamp(date);
-    }
-
-    static getTaskTime(strDate) {
-        return getTaskTime(strDate);
-    }
-
-    static getRemainingimeDistance2(distance: Number) {
-        return getRemainingimeDistance2(distance);
-    }
-}
-
 //
 // // 将当前时间换成时间格式字符串
 // var timestamp3 = 1403058804;
