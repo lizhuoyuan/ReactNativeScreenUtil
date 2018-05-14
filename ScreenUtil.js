@@ -4,6 +4,7 @@
  * ui设计基准,iphone 6
  * width:750px
  * height:1334px
+ * @2x
  */
 import {
     PixelRatio,
