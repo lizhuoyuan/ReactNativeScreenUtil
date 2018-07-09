@@ -55,6 +55,50 @@ export function scaleSize(size: Number) {
     return size / DEFAULT_DENSITY;
 }
 
+/**
+ * 判断是否为iphoneX
+ * @returns {boolean}
+ */
+export function isIphoneX() {
+    return (
+        Platform.OS === 'ios' &&
+        ((screenH === X_HEIGHT && screenW === X_WIDTH) ||
+            (screenH === X_WIDTH && screenW === X_HEIGHT))
+    )
+}
+
+/**
+ * 根据是否是iPhoneX返回不同的样式
+ * @param iphoneXStyle
+ * @param iosStyle
+ * @param androidStyle
+ * @returns {*}
+ */
+export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
+    if (isIphoneX()) {
+        return iphoneXStyle;
+    } else if (Platform.OS === 'ios') {
+        return iosStyle
+    } else {
+        if (androidStyle) return androidStyle;
+        return iosStyle
+    }
+}
+
+
+/**
+ * 判断字符串是否为空
+ * @param str
+ * @returns {boolean}
+ */
+export function isEmpty(str) {
+    if (!str) {
+        return true;
+    } else if (str.replace(/(^\s*)|(\s*$)/g, "").length == 0) {
+        return true;
+    }
+    return false;
+}
 
 //时间处理
 Date.prototype.format = function (format) {
@@ -195,49 +239,6 @@ export function getRemainingimeDistance2(distance: Number) {
     return [hours, minutes];//["0", "0", "2", "7", "33", "30"]0年0月2日 7时33分30秒
 }
 
-
-/**
- * 判断是否为iphoneX
- * @returns {boolean}
- */
-export function isIphoneX() {
-    return (
-        Platform.OS === 'ios' &&
-        ((screenH === X_HEIGHT && screenW === X_WIDTH) ||
-            (screenH === X_WIDTH && screenW === X_HEIGHT))
-    )
-}
-
-/**
- * 根据是否是iPhoneX返回不同的样式
- * @param iphoneXStyle
- * @param iosStyle
- * @param androidStyle
- * @returns {*}
- */
-export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
-    if (isIphoneX()) {
-        return iphoneXStyle;
-    } else if (Platform.OS === 'ios') {
-        return iosStyle
-    } else {
-        if (androidStyle) return androidStyle;
-        return iosStyle
-    }
-}
-
-/**
- * 判断字符串是否为空
- * @param str
- * @returns {boolean}
- */
-export function isEmpty(str) {
-    if (str !== null || str !== undefined || str !== '') {
-        return true;
-    } else {
-        return false
-    }
-}
 
 /**
  * 存储
