@@ -88,11 +88,13 @@ export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
 
 /**
  * 判断字符串是否为空
- * @param str
+ * @param str  (null|undefined|''|'   '|[]|{}) 均判断为空，返回true
  * @returns {boolean}
  */
 export function isEmpty(str) {
     if (!str) {
+        return true;
+    } else if (Object.keys(str).length === 0) {
         return true;
     } else if (str.replace(/(^\s*)|(\s*$)/g, "").length == 0) {
         return true;
