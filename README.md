@@ -11,3 +11,7 @@ ReactNative屏幕工具适配类
 适配iPhoneX的效果及相关方法: http://blog.csdn.net/u011272795/article/details/78592605
 
 屏幕适配工具类使用方法: http://blog.csdn.net/u011272795/article/details/73824558
+
+2018/7/12更新：
+调整了适配方法setSptext和scaleSize，
+最新的屏幕适配方法在android上的效果非常好，iOS未测试，如果iOS上效果不好，请使用最初的版本。
