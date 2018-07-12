@@ -20,10 +20,12 @@ export let pixelRatio = PixelRatio.get();
 //像素密度
 export const DEFAULT_DENSITY = 2;
 //px转换成dp
-//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的750和1334为对应尺寸即可.
-const w2 = 750 / DEFAULT_DENSITY;
+//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的defaultWidth和defaultHeight为对应尺寸即可.
+const defaultWidth = 375;
+const defaultHeight = 667;
+const w2 = defaultWidth / DEFAULT_DENSITY;
 //px转换成dp
-const h2 = 1334 / DEFAULT_DENSITY;
+const h2 = defaultHeight / DEFAULT_DENSITY;
 
 // iPhoneX
 const X_WIDTH = 375;
@@ -48,11 +50,7 @@ export function setSpText(size: Number) {
  * @returns {Number}
  */
 export function scaleSize(size: Number) {
-    let scaleWidth = screenW / w2;
-    let scaleHeight = screenH / h2;
-    let scale = Math.min(scaleWidth, scaleHeight);
-    size = Math.round((size * scale + 0.5));
-    return size / DEFAULT_DENSITY;
+    return size / defaultWidth * screenW;
 }
 
 /**
