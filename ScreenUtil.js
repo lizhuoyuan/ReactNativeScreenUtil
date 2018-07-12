@@ -41,7 +41,7 @@ export function setSpText(size: Number) {
     let scaleHeight = screenH / h2;
     let scale = Math.min(scaleWidth, scaleHeight);
     size = Math.round((size * scale + 0.5));
-    return size / DEFAULT_DENSITY;
+    return size / DEFAULT_DENSITY * fontScale;
 }
 
 /**
@@ -52,6 +52,15 @@ export function setSpText(size: Number) {
 export function scaleSize(size: Number) {
     return size / defaultWidth * screenW;
 }
+
+/* 最初版本尺寸适配方案 也许你会更喜欢这个
+export function scaleSize(size: Number) {
+    let scaleWidth = screenW / w2;
+    let scaleHeight = screenH / h2;
+    let scale = Math.min(scaleWidth, scaleHeight);
+    size = Math.round((size * scale + 0.5));
+    return size / DEFAULT_DENSITY;
+}*/
 
 /**
  * 判断是否为iphoneX
