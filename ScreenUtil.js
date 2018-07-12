@@ -87,7 +87,7 @@ export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
 
 
 /**
- * 判断字符串是否为空
+ * 判断对象，数组，字符串是否为空
  * @param str  (null|undefined|''|'   '|[]|{}) 均判断为空，返回true
  * @returns {boolean}
  */
