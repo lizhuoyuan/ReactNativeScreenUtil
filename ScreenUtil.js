@@ -106,9 +106,9 @@ export function ifIphoneX(iphoneXStyle, iosStyle = {}, androidStyle) {
 export function isEmpty(str) {
     if (!str) {
         return true;
-    } else if (Object.keys(str).length === 0) {
+    } else if (typeof str === 'object' && Object.keys(str).length === 0) {
         return true;
-    } else if (str.replace(/(^\s*)|(\s*$)/g, "").length == 0) {
+    } else if (str.replace(/(^\s*)|(\s*$)/g, "").length === 0) {
         return true;
     }
     return false;
