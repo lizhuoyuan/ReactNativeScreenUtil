@@ -32,19 +32,6 @@ const X_WIDTH = 375;
 const X_HEIGHT = 812;
 
 /**
- * 设置字体的size（单位px）
- * @param size 传入设计稿上的px
- * @returns {Number} 返回实际sp
- */
-export function setSpText(size: Number) {
-    let scaleWidth = screenW / w2;
-    let scaleHeight = screenH / h2;
-    let scale = Math.min(scaleWidth, scaleHeight);
-    size = Math.round((size * scale + 0.5));
-    return size / DEFAULT_DENSITY * fontScale;
-}
-
-/**
  * 屏幕适配,缩放size
  * @param size
  * @returns {Number}
@@ -61,6 +48,24 @@ export function scaleSize(size: Number) {
     size = Math.round((size * scale + 0.5));
     return size / DEFAULT_DENSITY;
 }*/
+
+/**
+ * 设置字体的size（单位px）
+ * @param size 传入设计稿上的px
+ * @returns {Number} 返回实际sp ,会随系统缩放比例改变，如不需要请去掉 * fontScale
+ */
+export function setSpText(size: Number) {
+    return size / defaultWidth * screenW * fontScale;
+}
+
+export function setSpText2(size: Number) {
+    let scaleWidth = screenW / w2;
+    let scaleHeight = screenH / h2;
+    let scale = Math.min(scaleWidth, scaleHeight);
+    size = Math.round((size * scale + 0.5));
+
+    return size / DEFAULT_DENSITY * fontScale;
+}
 
 /**
  * 判断是否为iphoneX
