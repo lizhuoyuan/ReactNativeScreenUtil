@@ -1,7 +1,7 @@
 /**
  * zhuoyuan93@gmail.com
  * 屏幕工具类 以及一些常用的工具类封装
- * ui设计基准,iphone 6
+ * ui设计基准,iphone 6 2倍图
  * width:750px
  * height:1334px
  * @2x
@@ -20,24 +20,40 @@ export let pixelRatio = PixelRatio.get();
 //像素密度
 export const DEFAULT_DENSITY = 2;
 //px转换成dp
-//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的defaultWidth和defaultHeight为对应尺寸即可.
+//以iphone6为基准,如果以其他尺寸为基准的话,请修改下面的defaultWidth和defaultHeight为对应尺寸即可. 以下为1倍图时
 const defaultWidth = 375;
 const defaultHeight = 667;
 const w2 = defaultWidth / DEFAULT_DENSITY;
 //px转换成dp
 const h2 = defaultHeight / DEFAULT_DENSITY;
 
+//缩放比例
+const _scaleWidth = screenW / defaultWidth;
+const _scaleHeight = screenH / defaultHeight;
+
 // iPhoneX
 const X_WIDTH = 375;
 const X_HEIGHT = 812;
 
 /**
- * 屏幕适配,缩放size
- * @param size
- * @returns {Number}
+ * 屏幕适配,缩放size , 默认根据宽度适配
+ * 横向的尺寸直接使用此方法
+ * 如：width ,paddingHorizontal ,paddingLeft ,paddingRight ,marginHorizontal ,marginLeft ,marginRight
+ * @param size 设计图的尺寸
+ * @returns {number}
  */
 export function scaleSize(size: Number) {
-    return size / defaultWidth * screenW;
+    return size * _scaleWidth;
+}
+
+/**
+ * 屏幕适配 , 纵向的尺寸使用此方法
+ * 如：height ,paddingVertical ,paddingTop ,paddingBottom ,marginVertical ,marginTop ,marginBottom
+ * @param size 设计图的尺寸
+ * @returns {number}
+ */
+export function scaleHeight(size: Number) {
+    return size * _scaleHeight;
 }
 
 /* 最初版本尺寸适配方案 也许你会更喜欢这个
@@ -55,7 +71,8 @@ export function scaleSize(size: Number) {
  * @returns {Number} 返回实际sp ,会随系统缩放比例改变，如不需要请去掉 * fontScale
  */
 export function setSpText(size: Number) {
-    return size / defaultWidth * screenW * fontScale;
+    const scale = Math.min(_scaleWidth, _scaleHeight);
+    return size * scale * fontScale;
 }
 
 export function setSpText2(size: Number) {
