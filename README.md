@@ -13,11 +13,11 @@ ReactNative屏幕工具适配类
 
 屏幕适配工具类使用方法: http://blog.csdn.net/u011272795/article/details/73824558
 
+#### 2018/8/15更新：
+优化了适配方法setSptext和scaleSize， <br/>
+添加了scaleHeight方法，根据不同手机的高度不同来进行适配，使尺寸更加合适 <br/>
+
 #### 2018/7/12更新：
 调整了适配方法setSptext和scaleSize， <br/>
 最新的屏幕适配方法在android上的效果非常好，iOS未测试，如果iOS上效果不好，请使用最初的版本。<br/>
 添加了判断目标是否为空的方法，详情请查阅工具中的isEmpty方法. <br/>
-
-#### 2018/8/15更新：
-优化了适配方法setSptext和scaleSize， <br/>
-添加了scaleHeight方法，根据不同手机的高度不同来进行适配，使尺寸更加合适 <br/>
