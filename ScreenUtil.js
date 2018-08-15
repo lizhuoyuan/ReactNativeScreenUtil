@@ -36,7 +36,7 @@ const X_WIDTH = 375;
 const X_HEIGHT = 812;
 
 /**
- * 屏幕适配,缩放size , 默认根据宽度适配
+ * 屏幕适配,缩放size , 默认根据宽度适配，纵向也可以使用此方法
  * 横向的尺寸直接使用此方法
  * 如：width ,paddingHorizontal ,paddingLeft ,paddingRight ,marginHorizontal ,marginLeft ,marginRight
  * @param size 设计图的尺寸
@@ -47,7 +47,7 @@ export function scaleSize(size: Number) {
 }
 
 /**
- * 屏幕适配 , 纵向的尺寸使用此方法
+ * 屏幕适配 , 纵向的尺寸使用此方法应该会更趋近于设计稿
  * 如：height ,paddingVertical ,paddingTop ,paddingBottom ,marginVertical ,marginTop ,marginBottom
  * @param size 设计图的尺寸
  * @returns {number}
