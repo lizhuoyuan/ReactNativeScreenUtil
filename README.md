@@ -14,6 +14,9 @@ ReactNative屏幕工具适配类
 屏幕适配工具类使用方法: http://blog.csdn.net/u011272795/article/details/73824558
 
 #### 2018/8/15更新：
+字体适配添加了是否根据手机文字缩放系数来缩放字体，避免在每个text都写相应的设置方法，详情请查看setSptext方法
+
+#### 2018/8/15更新：
 优化了适配方法setSptext和scaleSize， <br/>
 添加了scaleHeight方法，根据不同手机的高度不同来进行适配，使尺寸更加合适 <br/>
 
