@@ -67,12 +67,13 @@ export function scaleSize(size: Number) {
 
 /**
  * 设置字体的size（单位px）
- * @param size 传入设计稿上的px
- * @returns {Number} 返回实际sp ,会随系统缩放比例改变，如不需要请去掉 * fontScale
+ * @param size 传入设计稿上的px , allowFontScaling 是否根据设备文字缩放比例调整，默认不会
+ * @returns {Number} 返回实际sp
  */
-export function setSpText(size: Number) {
+function setSpText(size: Number, allowFontScaling = false) {
     const scale = Math.min(_scaleWidth, _scaleHeight);
-    return size * scale * fontScale;
+    const fontSize = allowFontScaling ? 1 : fontScale;
+    return size * scale / fontSize;
 }
 
 export function setSpText2(size: Number) {
